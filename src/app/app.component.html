@@ -1,6 +1,44 @@
-<form (submit)="submitForm()">
-  <input type="text" [(ngModel)]="formData.name" name="field1" placeholder="Field 1">
-  <input type="text" [(ngModel)]="formData.email" name="field2" placeholder="Field 2">
-  <input type="text" [(ngModel)]="formData.password" name="field2" placeholder="Field 2">
-  <button type="submit">Submit</button>
-</form>
+<div class="h-80 bg-emerald-300 w-full flex flex-col items-center justify-center">
+  <form (submit)="submitForm()" class="flex flex-col gap-y-2 justify-center">
+    <input class="w-60 border-2 border-black rounded-md px-2" type="text" [(ngModel)]="formData.name" name="field1"
+      placeholder="Name">
+    <input class="w-60 border-2 border-black rounded-md px-2" type="text" [(ngModel)]="formData.email" name="field2"
+      placeholder="Email">
+    <input class="w-60 border-2 border-black rounded-md px-2" type="text" [(ngModel)]="formData.password" name="field2"
+      placeholder="Password">
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+<div class="relative overflow-x-auto flex items-center justify-center py-5">
+  <table class="w-1/2 text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                   Sno
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Customer Name
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Email ID
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of data, let i = index">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {{i+1}}
+              </th>
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {{item.name}}
+              </th>
+              <td class="px-6 py-4">
+                  {{item.email}}
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+

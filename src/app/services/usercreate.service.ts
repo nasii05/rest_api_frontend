@@ -12,4 +12,8 @@ export class UsercreateService {
   postData(data: any){
     return this.http.post(`${this.apiUrl}/api/user/create`, data);
   }
+
+  getUserData(){
+    return this.http.get(`${this.apiUrl}/api/user/fetch`);
+  }
 }
